@@ -21,11 +21,11 @@ const PostDetailPage = () => {
     const fetchPostDetails = async () => {
       try {
         setIsLoading(true);
-        const { data } = await axios.get(`http://localhost:5000/posts/${id}`);
+        const { data } = await axios.get(`https://sumithra-social-media-app-2.onrender.com/posts/${id}`);
         setPost(data);
         
         // Fetch comments
-        const commentsResponse = await axios.get(`http://localhost:5000/comments/${id}`);
+        const commentsResponse = await axios.get(`https://sumithra-social-media-app-2.onrender.com/comments/${id}`);
         setComments(commentsResponse.data);
       } catch (error) {
         toast.error('Failed to load post details');

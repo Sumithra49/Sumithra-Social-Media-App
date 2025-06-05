@@ -25,11 +25,11 @@ const ProfileHeader = ({ profile, isCurrentUser, onFollowChange }) => {
       setIsLoading(true);
       
       if (isFollowing) {
-        await axios.put(`http://localhost:5000/users/${profile._id}/unfollow`);
+        await axios.put(`https://sumithra-social-media-app-2.onrender.com/users/${profile._id}/unfollow`);
         setFollowerCount(followerCount - 1);
         toast.success(`Unfollowed ${profile.username}`);
       } else {
-        await axios.put(`http://localhost:5000/users/${profile._id}/follow`);
+        await axios.put(`https://sumithra-social-media-app-2.onrender.com/users/${profile._id}/follow`);
         setFollowerCount(followerCount + 1);
         toast.success(`Now following ${profile.username}`);
         

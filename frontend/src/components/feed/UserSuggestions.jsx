@@ -18,7 +18,7 @@ const UserSuggestions = ({ onFollow }) => {
     const fetchSuggestions = async () => {
       try {
         setIsLoading(true);
-        const { data } = await axios.get('http://localhost:5000/users/suggestions');
+        const { data } = await axios.get('https://sumithra-social-media-app-2.onrender.com/users/suggestions');
         setSuggestions(data);
       } catch (error) {
         console.error('Failed to fetch suggestions:', error);
@@ -33,7 +33,7 @@ const UserSuggestions = ({ onFollow }) => {
   const handleFollow = async (userId, username) => {
     try {
       setFollowingStatus(prev => ({ ...prev, [userId]: 'loading' }));
-      await axios.put(`http://localhost:5000/users/${userId}/follow`);
+      await axios.put(`https://sumithra-social-media-app-2.onrender.com/users/${userId}/follow`);
       
       setFollowingStatus(prev => ({ ...prev, [userId]: 'followed' }));
       toast.success(`You are now following ${username}`);

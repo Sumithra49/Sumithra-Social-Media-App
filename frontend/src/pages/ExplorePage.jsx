@@ -20,7 +20,7 @@ const ExplorePage = () => {
     const fetchPosts = async () => {
       try {
         setIsLoading(true);
-        const { data } = await axios.get(`http://localhost:5000/posts/trending?page=${page}`);
+        const { data } = await axios.get(`https://sumithra-social-media-app-2.onrender.com/posts/trending?page=${page}`);
         
         if (page === 1) {
           setPosts(data.posts);

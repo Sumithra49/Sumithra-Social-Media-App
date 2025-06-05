@@ -22,7 +22,7 @@ const MessagesPage = () => {
           },
         };
 
-        const { data } = await axios.get("http://localhost:5000/messages", config);
+        const { data } = await axios.get("https://sumithra-social-media-app-2.onrender.com/messages", config);
         setConversations(data);
       } catch (error) {
         toast.error("Failed to load conversations");

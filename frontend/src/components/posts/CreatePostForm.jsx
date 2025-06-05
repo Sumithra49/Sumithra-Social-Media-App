@@ -24,7 +24,7 @@ const CreatePostForm = ({ onPostCreated }) => {
     try {
       setIsSubmitting(true);
       
-      const { data } = await axios.post('http://localhost:5000/posts', {
+      const { data } = await axios.post('https://sumithra-social-media-app-2.onrender.com/posts', {
         text,
         image,
         video

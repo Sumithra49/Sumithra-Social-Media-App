@@ -14,11 +14,11 @@ const MessagesPage = () => {
       try {
         setIsLoading(true);
         // 1. Fetch the array of user IDs of conversation partners
-        const { data: userIds } = await axios.get('http://localhost:5000/messages');
+        const { data: userIds } = await axios.get('https://sumithra-social-media-app-2.onrender.com/messages');
 
         // 2. Fetch user details for each userId in parallel
         const userDetailsPromises = userIds.map(id =>
-          axios.get(`http://localhost:5000/users/${id}`).then(res => res.data)
+          axios.get(`https://sumithra-social-media-app-2.onrender.com/users/${id}`).then(res => res.data)
         );
         const users = await Promise.all(userDetailsPromises);
 

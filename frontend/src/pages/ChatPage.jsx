@@ -2,7 +2,7 @@ import axios from 'axios'; // Add this import
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-const BACKEND_URL = 'http://localhost:5000';  // Your backend URL
+const BACKEND_URL = 'https://sumithra-social-media-app-2.onrender.com';  // Your backend URL
 
 const ChatPage = () => {
   const { id } = useParams(); // chat partner's id or conversation id

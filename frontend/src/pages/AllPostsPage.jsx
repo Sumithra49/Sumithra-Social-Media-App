@@ -7,7 +7,7 @@ const AllPostsPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/posts')
+    axios.get('https://sumithra-social-media-app-2.onrender.com/posts')
       .then(res => setPosts(res.data))
       .catch(err => console.error(err))
       .finally(() => setLoading(false));

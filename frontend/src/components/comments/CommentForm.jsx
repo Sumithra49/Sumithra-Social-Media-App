@@ -21,7 +21,7 @@ const CommentForm = ({ postId, onCommentAdded }) => {
     try {
       setIsSubmitting(true);
       
-      const { data } = await axios.post('http://localhost:5000/comments', {
+      const { data } = await axios.post('https://sumithra-social-media-app-2.onrender.com/comments', {
         postId,
         text
       });

@@ -25,7 +25,7 @@ const ProfilePage = () => {
     const fetchProfileData = async () => {
       try {
         setIsLoading(true);
-        const { data } = await axios.get(`http://localhost:5000/users/${id}`);
+        const { data } = await axios.get(`https://sumithra-social-media-app-2.onrender.com/users/${id}`);
         setProfileData(data);
       } catch (error) {
         toast.error('Failed to load profile data');
@@ -42,7 +42,7 @@ const ProfilePage = () => {
     const fetchPosts = async () => {
       try {
         setIsLoadingPosts(true);
-        const { data } = await axios.get(`http://localhost:5000/posts/user/${id}?page=${page}`);
+        const { data } = await axios.get(`https://sumithra-social-media-app-2.onrender.com/posts/user/${id}?page=${page}`);
         
         if (page === 1) {
           setPosts(data.posts);

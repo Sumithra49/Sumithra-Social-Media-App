@@ -27,10 +27,10 @@ const PostCard = ({ post, onDelete, onLike }) => {
   const handleLike = async () => {
     try {
       if (isLiked) {
-        await axios.put(`http://localhost:5000/posts/${post._id}/unlike`);
+        await axios.put(`https://sumithra-social-media-app-2.onrender.com/posts/${post._id}/unlike`);
         setLikesCount(likesCount - 1);
       } else {
-        await axios.put(`http://localhost:5000/posts/${post._id}/like`);
+        await axios.put(`https://sumithra-social-media-app-2.onrender.com/posts/${post._id}/like`);
         setLikesCount(likesCount + 1);
       }
       setIsLiked(!isLiked);
@@ -43,7 +43,7 @@ const PostCard = ({ post, onDelete, onLike }) => {
   // Delete post
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/posts/${post._id}`);
+      await axios.delete(`https://sumithra-social-media-app-2.onrender.com/posts/${post._id}`);
       toast.success('Post deleted successfully');
       if (onDelete) onDelete(post._id);
       setShowConfirmDelete(false);

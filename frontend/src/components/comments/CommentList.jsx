@@ -26,13 +26,13 @@ const CommentList = ({ comments, currentUserId, onCommentDeleted }) => {
   const handleLikeComment = async (commentId, isLiked) => {
     try {
       if (isLiked) {
-        await axios.put(`http://localhost:5000/comments/${commentId}/unlike`);
+        await axios.put(`https://sumithra-social-media-app-2.onrender.com/comments/${commentId}/unlike`);
         setCommentLikesCount(prev => ({
           ...prev,
           [commentId]: prev[commentId] - 1
         }));
       } else {
-        await axios.put(`http://localhost:5000/comments/${commentId}/like`);
+        await axios.put(`https://sumithra-social-media-app-2.onrender.com/comments/${commentId}/like`);
         setCommentLikesCount(prev => ({
           ...prev,
           [commentId]: prev[commentId] + 1
@@ -51,7 +51,7 @@ const CommentList = ({ comments, currentUserId, onCommentDeleted }) => {
   // Handle delete comment
   const handleDeleteComment = async (commentId) => {
     try {
-      await axios.delete(`http://localhost:5000/comments/${commentId}`);
+      await axios.delete(`https://sumithra-social-media-app-2.onrender.com/comments/${commentId}`);
       toast.success('Comment deleted successfully');
       
       if (onCommentDeleted) {
@@ -93,7 +93,7 @@ const CommentList = ({ comments, currentUserId, onCommentDeleted }) => {
             className="flex space-x-3"
             variants={item}
           >
-            <Link to={`http://localhost:5000/profile/${comment.user._id}`}>
+            <Link to={`https://sumithra-social-media-app-2.onrender.com/profile/${comment.user._id}`}>
               <img 
                 src={comment.user.profilePicture} 
                 alt={comment.user.username}

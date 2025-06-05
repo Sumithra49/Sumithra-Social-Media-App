@@ -22,7 +22,7 @@ const ChatBox = ({ recipientId, recipientData }) => {
     const getMessages = async () => {
       try {
         setIsLoading(true);
-        const { data } = await axios.get(`http://localhost:5000/messages/${recipientId}`);
+        const { data } = await axios.get(`https://sumithra-social-media-app-2.onrender.com/messages/${recipientId}`);
         setMessages(data);
       } catch (error) {
         toast.error('Failed to load messages');
@@ -49,7 +49,7 @@ const ChatBox = ({ recipientId, recipientData }) => {
           }]);
           
           // Mark message as read
-          axios.put(`http://localhost:5000/messages/${recipientId}/read`);
+          axios.put(`https://sumithra-social-media-app-2.onrender.com/messages/${recipientId}/read`);
         }
       };
       
